@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class tankcontroller : MonoBehaviour
 {
@@ -18,7 +19,10 @@ public class tankcontroller : MonoBehaviour
     public KeyCode right;
     public KeyCode left;
 
-
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     // Start is called before the first frame update
     void Start()
